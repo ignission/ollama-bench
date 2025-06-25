@@ -26,10 +26,10 @@ pub fn print_results_table(summaries: &[ModelSummary], duration: Duration) {
         };
         
         println!(
-            "│ {:11} │ {:9.1} tok/s │ {:9.0}ms │ {:10.1}% │",
+            "│ {:11} │ {:>5.1} tok/s │ {:>9}ms │ {:>11.1}% │",
             model_display,
             summary.avg_tokens_per_second,
-            summary.avg_ttft_ms,
+            summary.avg_ttft_ms as u64,
             summary.success_rate * 100.0
         );
     }
