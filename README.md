@@ -171,7 +171,7 @@ ollama pull llama2:7b
 
 ## 📝 License
 
-Dual-licensed under MIT OR Apache-2.0
+MIT License
 
 ## 🤝 Contributing
 
