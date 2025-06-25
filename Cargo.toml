@@ -1,0 +1,33 @@
+[package]
+name = "ollama-meter"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70.0"
+authors = ["ollama-meter team"]
+description = "⚡ Apache Bench-style Ollama LLM performance benchmarking"
+readme = "README.md"
+repository = "https://github.com/username/ollama-meter"
+license = "MIT OR Apache-2.0"
+keywords = ["ollama", "benchmark", "llm", "performance", "cli"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+clap = { version = "4.4", features = ["derive", "color"] }
+tokio = { version = "1.35", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+crossterm = "0.27"
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[profile.release-small]
+inherits = "release"
+opt-level = "z"
