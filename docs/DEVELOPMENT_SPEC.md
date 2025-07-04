@@ -1,8 +1,8 @@
-# ollama-meter: Development Specification
+# ollama-bench: Development Specification
 
 ## Project Overview
 
-**ollama-meter** is a Rust-based CLI tool designed to provide Apache Bench-style simplicity for Ollama LLM performance benchmarking. It solves the "5-minute benchmark" problem that existing overengineered tools fail to address.
+**ollama-bench** is a Rust-based CLI tool designed to provide Apache Bench-style simplicity for Ollama LLM performance benchmarking. It solves the "5-minute benchmark" problem that existing overengineered tools fail to address.
 
 ## Core Design Principles
 
@@ -15,12 +15,12 @@
 ### 2. Apache Bench-Inspired Simplicity
 ```bash
 # Simple as ab command
-ollama-meter -m llama2:7b,mistral:7b -n 10
+ollama-bench -m llama2:7b,mistral:7b -n 10
 ```
 
 ### 3. Progressive Complexity
-- Level 1: `ollama-meter llama2:7b` (ultra-simple)
-- Level 2: `ollama-meter llama2:7b mistral:7b` (comparison)
+- Level 1: `ollama-bench llama2:7b` (ultra-simple)
+- Level 2: `ollama-bench llama2:7b mistral:7b` (comparison)
 - Level 3: Full options with JSON/HTML output
 
 ## Technical Requirements
@@ -58,16 +58,16 @@ chrono = { version = "0.4", features = ["serde"] }
 ### Basic Usage Patterns
 ```bash
 # Simplest usage
-ollama-meter llama2:7b
+ollama-bench llama2:7b
 
 # Model comparison
-ollama-meter llama2:7b mistral:7b
+ollama-bench llama2:7b mistral:7b
 
 # With options
-ollama-meter -m llama2:7b,mistral:7b -n 10 -c 3
+ollama-bench -m llama2:7b,mistral:7b -n 10 -c 3
 
 # Full featured
-ollama-meter --models llama2:7b,mistral:7b \
+ollama-bench --models llama2:7b,mistral:7b \
              --iterations 10 \
              --concurrency 3 \
              --output json \
@@ -78,7 +78,7 @@ ollama-meter --models llama2:7b,mistral:7b \
 ### CLI Structure
 ```rust
 #[derive(Parser)]
-#[command(name = "ollama-meter")]
+#[command(name = "ollama-bench")]
 #[command(about = "⚡ Apache Bench-style Ollama LLM performance benchmarking")]
 struct Cli {
     /// Models to benchmark (space or comma separated)
@@ -223,7 +223,7 @@ pub struct BenchmarkConfig {
 
 ### 1. Terminal Table (Default)
 ```
-⚡ ollama-meter v1.0.0 - Benchmarking 2 models with 5 iterations each
+⚡ ollama-bench v1.0.0 - Benchmarking 2 models with 5 iterations each
 
 Testing llama2:7b...
 ████████████████████████████████ 100% (5/5) [00:02:15]
@@ -432,4 +432,4 @@ cargo build --release --target x86_64-unknown-linux-gnu
 
 ---
 
-This specification provides a comprehensive foundation for developing ollama-meter as a best-in-class Ollama benchmarking tool that fills the current market gap.
+This specification provides a comprehensive foundation for developing ollama-bench as a best-in-class Ollama benchmarking tool that fills the current market gap.

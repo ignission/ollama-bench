@@ -41,15 +41,15 @@
 
 1. **Initialize Project**
    ```bash
-   cargo new ollama-meter --bin
-   cd ollama-meter
+   cargo new ollama-bench --bin
+   cd ollama-bench
    ```
 
 2. **Copy Cargo.toml** (from file structure document)
 
 3. **Create src/lib.rs** for testing support:
    ```rust
-   //! ollama-meter library for benchmarking Ollama models
+   //! ollama-bench library for benchmarking Ollama models
    
    pub mod types;
    pub mod error;
@@ -194,8 +194,8 @@
 ## Quality Gates and Acceptance Criteria
 
 ### 🎯 MVP Release Criteria (v0.1.0)
-- [~] `ollama-meter llama2:7b` works end-to-end ⚠️ Needs completion
-- [~] `ollama-meter llama2:7b mistral:7b` compares models ⚠️ Needs completion
+- [~] `ollama-bench llama2:7b` works end-to-end ⚠️ Needs completion
+- [~] `ollama-bench llama2:7b mistral:7b` compares models ⚠️ Needs completion
 - [x] Beautiful table output with colors ✅
 - [x] User-friendly error messages ✅
 - [ ] Cross-platform binary <15MB
@@ -236,8 +236,8 @@
 - [ ] Error messages are user-friendly
 
 ### 🎯 Success Metrics
-- **Binary size**: <15MB (use `ls -la target/release/ollama-meter`)
-- **Startup time**: <100ms (use `time ./ollama-meter --help`)
+- **Binary size**: <15MB (use `ls -la target/release/ollama-bench`)
+- **Startup time**: <100ms (use `time ./ollama-bench --help`)
 - **Memory usage**: <10MB base (use `ps` or Activity Monitor)
 - **First-run experience**: <5 minutes from download to results
 
@@ -259,4 +259,4 @@
 
 ---
 
-This checklist provides Claude Code with a clear, prioritized roadmap for developing ollama-meter from initial concept to production-ready tool.
+This checklist provides Claude Code with a clear, prioritized roadmap for developing ollama-bench from initial concept to production-ready tool.

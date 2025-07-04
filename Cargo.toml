@@ -1,12 +1,12 @@
 [package]
-name = "ollama-meter"
-version = "0.1.0"
+name = "ollama-bench"
+version = "0.1.1"
 edition = "2021"
 rust-version = "1.70.0"
-authors = ["ollama-meter team"]
+authors = ["ollama-bench team"]
 description = "⚡ Apache Bench-style Ollama LLM performance benchmarking"
 readme = "README.md"
-repository = "https://github.com/username/ollama-meter"
+repository = "https://github.com/username/ollama-bench"
 license = "MIT OR Apache-2.0"
 keywords = ["ollama", "benchmark", "llm", "performance", "cli"]
 categories = ["command-line-utilities", "development-tools"]

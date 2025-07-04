@@ -1,12 +1,12 @@
-# Claude Code Instructions for ollama-meter Development
+# Claude Code Instructions for ollama-bench Development
 
 ## Project Initialization
 
 ### 1. Create New Rust Project
 ```bash
 # Initialize the project
-cargo new ollama-meter --bin
-cd ollama-meter
+cargo new ollama-bench --bin
+cd ollama-bench
 
 # Add to Cargo.toml immediately
 ```
@@ -14,14 +14,14 @@ cd ollama-meter
 ### 2. Initial Cargo.toml Configuration
 ```toml
 [package]
-name = "ollama-meter"
+name = "ollama-bench"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.70.0"
 authors = ["Your Name <your.email@example.com>"]
 description = "⚡ Apache Bench-style Ollama LLM performance benchmarking"
 readme = "README.md"
-repository = "https://github.com/username/ollama-meter"
+repository = "https://github.com/username/ollama-bench"
 license = "MIT OR Apache-2.0"
 keywords = ["ollama", "benchmark", "llm", "performance", "cli"]
 categories = ["command-line-utilities", "development-tools"]
@@ -65,7 +65,7 @@ opt-level = "z"
 use clap::{Parser, ValueEnum};
 
 #[derive(Parser)]
-#[command(name = "ollama-meter")]
+#[command(name = "ollama-bench")]
 #[command(about = "⚡ Apache Bench-style Ollama LLM performance benchmarking")]
 #[command(version)]
 pub struct Cli {
@@ -303,13 +303,13 @@ use assert_cmd::Command;
 
 #[test]
 fn test_help_output() {
-    let mut cmd = Command::cargo_bin("ollama-meter").unwrap();
+    let mut cmd = Command::cargo_bin("ollama-bench").unwrap();
     cmd.arg("--help").assert().success();
 }
 
 #[test]
 fn test_version_output() {
-    let mut cmd = Command::cargo_bin("ollama-meter").unwrap();
+    let mut cmd = Command::cargo_bin("ollama-bench").unwrap();
     cmd.arg("--version").assert().success();
 }
 ```
@@ -373,20 +373,20 @@ rustup target add x86_64-unknown-linux-gnu
 
 ### 1. README.md Structure
 ```markdown
-# ollama-meter
+# ollama-bench
 
 ⚡ Apache Bench-style Ollama LLM performance benchmarking
 
 ## Quick Start
 \`\`\`bash
 # Install
-cargo install ollama-meter
+cargo install ollama-bench
 
 # Basic usage
-ollama-meter llama2:7b
+ollama-bench llama2:7b
 
 # Compare models
-ollama-meter llama2:7b mistral:7b
+ollama-bench llama2:7b mistral:7b
 \`\`\`
 
 ## Features
@@ -436,4 +436,4 @@ pub async fn generate(&self, model: &str, prompt: &str) -> anyhow::Result<Benchm
 
 ---
 
-This instruction set provides Claude Code with everything needed to develop a production-ready ollama-meter tool that solves the identified market gap.
+This instruction set provides Claude Code with everything needed to develop a production-ready ollama-bench tool that solves the identified market gap.

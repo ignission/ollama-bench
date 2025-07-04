@@ -1,9 +1,9 @@
-# ollama-meter Project File Structure
+# ollama-bench Project File Structure
 
 ## Complete Directory Layout
 
 ```
-ollama-meter/
+ollama-bench/
 ├── Cargo.toml                 # Project configuration and dependencies
 ├── Cargo.lock                 # Dependency lock file (auto-generated)
 ├── README.md                  # Project documentation
@@ -64,14 +64,14 @@ ollama-meter/
 #### 1. Cargo.toml
 ```toml
 [package]
-name = "ollama-meter"
+name = "ollama-bench"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.70.0"
 authors = ["Your Name <your.email@example.com>"]
 description = "⚡ Apache Bench-style Ollama LLM performance benchmarking"
 readme = "README.md"
-repository = "https://github.com/username/ollama-meter"
+repository = "https://github.com/username/ollama-bench"
 license = "MIT OR Apache-2.0"
 keywords = ["ollama", "benchmark", "llm", "performance", "cli"]
 categories = ["command-line-utilities", "development-tools"]
@@ -100,13 +100,13 @@ panic = "abort"
 strip = true
 
 [[bin]]
-name = "ollama-meter"
+name = "ollama-bench"
 path = "src/main.rs"
 ```
 
 #### 2. src/main.rs
 ```rust
-//! ollama-meter: Apache Bench-style Ollama LLM performance benchmarking
+//! ollama-bench: Apache Bench-style Ollama LLM performance benchmarking
 //! 
 //! This tool provides simple, fast performance benchmarking for Ollama models
 //! with a focus on ease of use and cross-platform compatibility.
@@ -154,13 +154,13 @@ use clap::{Parser, ValueEnum};
 use std::path::PathBuf;
 
 #[derive(Parser)]
-#[command(name = "ollama-meter")]
+#[command(name = "ollama-bench")]
 #[command(about = "⚡ Apache Bench-style Ollama LLM performance benchmarking")]
 #[command(version)]
 #[command(long_about = None)]
 pub struct Cli {
     /// Models to benchmark (space separated for simplicity)
-    /// Example: ollama-meter llama2:7b mistral:7b
+    /// Example: ollama-bench llama2:7b mistral:7b
     pub models: Vec<String>,
     
     /// Number of test iterations per model
@@ -391,7 +391,7 @@ pub enum BenchmarkError {
     #[error("❌ Network timeout after {0}s\n💡 Try increasing timeout with --timeout {1}\n💡 Check if Ollama server is responsive")]
     NetworkTimeout(u64, u64),
     
-    #[error("❌ No models specified\n💡 Usage: ollama-meter llama2:7b\n💡 Or: ollama-meter llama2:7b mistral:7b")]
+    #[error("❌ No models specified\n💡 Usage: ollama-bench llama2:7b\n💡 Or: ollama-bench llama2:7b mistral:7b")]
     NoModelsSpecified,
     
     #[error("❌ Invalid number of iterations (must be > 0)\n💡 Use: --iterations 5")]

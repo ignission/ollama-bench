@@ -1,4 +1,4 @@
-# ollama-meter
+# ollama-bench
 
 ⚡ Apache Bench-style Ollama LLM performance benchmarking tool
 
@@ -9,10 +9,10 @@
 cargo install --path .
 
 # Basic usage - benchmark a single model
-ollama-meter llama2:7b
+ollama-bench llama2:7b
 
 # Compare multiple models
-ollama-meter llama2:7b mistral:7b phi-2
+ollama-bench llama2:7b mistral:7b phi-2
 ```
 
 ## 📊 Features
@@ -29,10 +29,10 @@ ollama-meter llama2:7b mistral:7b phi-2
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/ollama-meter
-cd ollama-meter
+git clone https://github.com/yourusername/ollama-bench
+cd ollama-bench
 cargo build --release
-# Binary will be at ./target/release/ollama-meter
+# Binary will be at ./target/release/ollama-bench
 ```
 
 ### Prerequisites
@@ -46,48 +46,48 @@ cargo build --release
 
 ```bash
 # Benchmark a single model with default settings
-ollama-meter llama2:7b
+ollama-bench llama2:7b
 
 # Run 10 iterations instead of default 5
-ollama-meter -n 10 llama2:7b
+ollama-bench -n 10 llama2:7b
 
 # Use a custom prompt
-ollama-meter --prompt "Explain quantum computing" llama2:7b
+ollama-bench --prompt "Explain quantum computing" llama2:7b
 ```
 
 ### Comparing Models
 
 ```bash
 # Compare multiple models
-ollama-meter llama2:7b mistral:7b phi-2
+ollama-bench llama2:7b mistral:7b phi-2
 
 # Export results to CSV
-ollama-meter -e results.csv llama2:7b mistral:7b
+ollama-bench -e results.csv llama2:7b mistral:7b
 
 # Output as JSON
-ollama-meter -o json llama2:7b mistral:7b
+ollama-bench -o json llama2:7b mistral:7b
 ```
 
 ### Advanced Options
 
 ```bash
 # Full option list
-ollama-meter --help
+ollama-bench --help
 
 # Quiet mode (no progress bars)
-ollama-meter -q llama2:7b
+ollama-bench -q llama2:7b
 
 # Custom Ollama URL
-ollama-meter --ollama-url http://remote:11434 llama2:7b
+ollama-bench --ollama-url http://remote:11434 llama2:7b
 
 # Adjust generation parameters
-ollama-meter -t 0.8 -m 200 llama2:7b  # temperature 0.8, max 200 tokens
+ollama-bench -t 0.8 -m 200 llama2:7b  # temperature 0.8, max 200 tokens
 ```
 
 ## 📈 Output Example
 
 ```
-⚡ ollama-meter v0.1.0 - Benchmarking 2 models with 5 iterations each
+⚡ ollama-bench v0.1.0 - Benchmarking 2 models with 5 iterations each
 
 Testing llama2:7b...
 ████████████████████████████████ 100% (5/5)
@@ -137,7 +137,7 @@ cargo clippy
 
 ## 🎯 Design Philosophy
 
-ollama-meter follows the "Apache Bench" philosophy:
+ollama-bench follows the "Apache Bench" philosophy:
 
 - **Simple** - One command to get started
 - **Fast** - Minimal overhead, quick results

@@ -1,8 +1,8 @@
-# CLAUDE.md - Master Instructions for ollama-meter Development
+# CLAUDE.md - Master Instructions for ollama-bench Development
 
 ## 🎯 Project Mission
 
-You are developing **ollama-meter**, a Rust CLI tool that solves the "5-minute benchmark" problem for Ollama LLM performance testing. This tool fills a critical market gap identified through comprehensive analysis.
+You are developing **ollama-bench**, a Rust CLI tool that solves the "5-minute benchmark" problem for Ollama LLM performance testing. This tool fills a critical market gap identified through comprehensive analysis.
 
 ## 🔍 Problem Context
 
@@ -29,8 +29,8 @@ Create the **"Apache Bench of Ollama benchmarking"** - a tool that:
 
 1. **Initialize Project Structure**
    ```bash
-   cargo new ollama-meter --bin
-   cd ollama-meter
+   cargo new ollama-bench --bin
+   cd ollama-bench
    # Copy Cargo.toml from docs/FILE_STRUCTURE.md
    ```
 
@@ -51,8 +51,8 @@ Create the **"Apache Bench of Ollama benchmarking"** - a tool that:
    - `src/main.rs` - Entry point integration
 
 #### ✅ MVP Success Criteria:
-- `ollama-meter llama2:7b` works end-to-end
-- `ollama-meter llama2:7b mistral:7b` compares models
+- `ollama-bench llama2:7b` works end-to-end
+- `ollama-bench llama2:7b mistral:7b` compares models
 - Beautiful colored table output
 - User-friendly error messages
 - <15MB binary, <100ms startup
@@ -124,12 +124,12 @@ Create the **"Apache Bench of Ollama benchmarking"** - a tool that:
 ab -n 1000 -c 10 http://example.com/
 
 # Our equivalent
-ollama-meter -n 5 llama2:7b mistral:7b
+ollama-bench -n 5 llama2:7b mistral:7b
 ```
 
 ### Expected Output Style:
 ```
-⚡ ollama-meter v1.0.0 - Benchmarking 2 models with 5 iterations each
+⚡ ollama-bench v1.0.0 - Benchmarking 2 models with 5 iterations each
 
 Testing llama2:7b...
 ████████████████████████████████ 100% (5/5) [00:02:15]

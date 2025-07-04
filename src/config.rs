@@ -1,4 +1,4 @@
-pub const APP_NAME: &str = "ollama-meter";
+pub const APP_NAME: &str = "ollama-bench";
 pub const APP_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub const APP_DESCRIPTION: &str = "⚡ Apache Bench-style Ollama LLM performance benchmarking";
 
